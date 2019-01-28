@@ -10,11 +10,8 @@ import org.junit.Test;
 
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.SQLOutput;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import static org.junit.Assert.*;
 
 public class FileResultReaderTest {
 
@@ -27,8 +24,8 @@ public class FileResultReaderTest {
 
     @Before
     public void setUp() throws Exception {
-        ResultLoader loader = new FileResultLoader();
-        loader.load(new String[]{src});
+        ResultLoader loader = new FileResultLoader(new String[]{src});
+        loader.load();
 
         resultReader = new FileResultReader();
     }

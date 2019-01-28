@@ -23,16 +23,14 @@ public class FileResultWriterTest {
     private final String trash = "/Users/koskedk/Projects/labz/trash";
     private final String store = "/Users/koskedk/Projects/labz/store";
 
-
     @Before
     public void setUp() throws Exception {
-        ResultLoader loader = new FileResultLoader();
-        loader.load(new String[]{src});
+        ResultLoader loader = new FileResultLoader(new String[]{src});
+        loader.load();
 
         ResultReader resultReader = new FileResultReader();
         resultWriter = new FileResultWriter(resultReader);
     }
-
 
     @After
     public void tearDown() throws Exception {
