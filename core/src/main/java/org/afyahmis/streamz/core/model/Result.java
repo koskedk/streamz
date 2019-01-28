@@ -1,7 +1,6 @@
 package org.afyahmis.streamz.core.model;
 
 import java.time.LocalDateTime;
-import java.util.Date;
 
 public class Result {
 
@@ -85,6 +84,10 @@ public class Result {
     @Override
     public String toString() {
         return String.format("%s %s %s",name,result,resultDate);
+    }
+
+    public String getPrintOut(){
+        return String.format("%s|%s|%s|%s",name,result,resultDate,LocalDateTime.now());
     }
 
 }
